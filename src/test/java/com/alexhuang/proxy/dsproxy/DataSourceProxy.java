@@ -12,17 +12,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("dataSource")
-public class DataSourceProxy implements FactoryBean<DataSource>, InitializingBean {
+public class DataSourceProxy implements FactoryBean<DataSource>,
+		InitializingBean, InvocationHandler {
 
 	private DataSource proxyObject;
-	
+
 	@Autowired
-	private MyInvocationHandler myInvocationHandler;
+	private DataSource originalDS;
+
+	@Override
+	public Object invoke(Object proxy, Method method, Object[] args)
+			throws Throwable {
+		// TODO Auto-generated method stub
+		System.out.println("Thread id is " + Thread.currentThread().getId()
+				+ ", method is " + method.toString() + ", CityCode is "
+				+ TestCityCodeHolder.get());
+		// Map<String, DataSource> map = null;
+		// DataSource targetDataSource = map.get(TestCityCodeHolder.get());
+		DataSource targetDataSource = originalDS;
+
+		return method.invoke(targetDataSource, args);
+	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		MyInvocationHandler handler = new MyInvocationHandler();
-		proxyObject = (DataSource) Proxy.newProxyInstance(getClass().getClassLoader(), new Class<?>[] { DataSource.class }, myInvocationHandler);
+		proxyObject = (DataSource) Proxy.newProxyInstance(getClass()
+				.getClassLoader(), new Class<?>[] { DataSource.class }, this);
 	}
 
 	@Override
