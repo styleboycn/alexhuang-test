@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mazdaCar" class="com.alexhuang.spring.factorybean.CarProxy">
+		<property name="serviceInterface"
+			value=" com.alexhuang.spring.factorybean.MazdaCar" />
+	</bean>
+	
+	<bean id="audiCar" class="com.alexhuang.spring.factorybean.CarProxy">
+		<property name="serviceInterface"
+			value=" com.alexhuang.spring.factorybean.AudiCar" />
+	</bean>
+	
+	<bean id="initBean" class="com.alexhuang.spring.factorybean.InitBean">
+		<property name="audiCar" ref="audiCar" />
+		<property name="mazdaCar" ref="mazdaCar" />
+    </bean>  
+	
+</beans>
