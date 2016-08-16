@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:META-INF/spring/sgs-biz-test-bean.xml")
+@ContextConfiguration(locations = "classpath*:dsproxy.xml")
 public class TestPortal {
 
 	private @Autowired TestBiz testBiz;
@@ -27,7 +27,9 @@ public class TestPortal {
 			es.execute(() -> {
 				String cityCode = "city" + x;
 				TestCityCodeHolder.set(cityCode);
-				System.out.println("Thread id is " + Thread.currentThread().getId() + ", CityCode is " + cityCode);
+				System.out.println("[TestPortal.test]Thread id is "
+						+ Thread.currentThread().getId() + ", CityCode is "
+						+ cityCode);
 				testBiz.test();
 				cdl.countDown();
 			});
