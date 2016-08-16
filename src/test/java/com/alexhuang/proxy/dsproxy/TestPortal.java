@@ -19,7 +19,7 @@ public class TestPortal {
 	@Test
 	public void test() throws Exception {
 		ExecutorService es = Executors.newFixedThreadPool(10);
-		int c = 1;
+		int c = 2;
 		CountDownLatch cdl = new CountDownLatch(c);
 
 		for (int i = 0; i < c; i++) {

@@ -3,6 +3,8 @@ package com.alexhuang.proxy.dsproxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -24,6 +26,11 @@ public class DataSourceProxy implements FactoryBean<DataSource>,
 	@Autowired
 	private DataSource originalDS;
 
+	@Autowired
+	private DataSource originalDS2;
+
+	private Map<String, DataSource> dsMap;
+
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
@@ -32,10 +39,12 @@ public class DataSourceProxy implements FactoryBean<DataSource>,
 				+ method.toString() + ", CityCode is "
 				+ TestCityCodeHolder.get());
 
-		// Map<String, DataSource> map = null;
-		// DataSource targetDataSource = map.get(TestCityCodeHolder.get());
+		// DataSource targetDataSource = originalDS;
+		DataSource targetDataSource = dsMap.get(TestCityCodeHolder.get());
+		if (targetDataSource == null) {
+			targetDataSource = dsMap.get("city0");
+		}
 
-		DataSource targetDataSource = originalDS;
 		return method.invoke(targetDataSource, args);
 	}
 
@@ -43,6 +52,9 @@ public class DataSourceProxy implements FactoryBean<DataSource>,
 	public void afterPropertiesSet() throws Exception {
 		proxyObject = (DataSource) Proxy.newProxyInstance(getClass()
 				.getClassLoader(), new Class<?>[] { DataSource.class }, this);
+		dsMap = new HashMap();
+		dsMap.put("city0", originalDS);
+		dsMap.put("city1", originalDS2);
 	}
 
 	@Override
