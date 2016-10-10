@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class TestFlatMap2 {
+public class FlatMapTest2 {
 	
 	public static class Developer {
 	    private String name;
