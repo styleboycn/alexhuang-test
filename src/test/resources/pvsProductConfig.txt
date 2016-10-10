@@ -1,0 +1,8 @@
+[
+{"productName": "顺丰特惠", "productCode": "S2", "productExpressType": "B1", "productLimitType": "T6", "productCargoType": "T6"},
+{"productName": "顺丰标快(文件)", "productCode": "S1-DOC", "productExpressType": "B1", "productLimitType": "T4", "productCargoType": "C1"},
+{"productName": "顺丰标快(D类)", "productCode": "S1-D", "productExpressType": "B1", "productLimitType": "T4", "productCargoType": "C219"},
+{"productName": "国际特惠-包裹", "productCode": "S3", "productExpressType": "B1", "productLimitType": "T9", "productCargoType": "C223"},
+{"productName": "国际特惠-文件", "productCode": "S3-DOC", "productExpressType": "B1", "productLimitType": "T9", "productCargoType": "C101"},
+{"productName": "顺丰隔日", "productCode": "SFGR", "productExpressType": "B1", "productLimitType": "T6", "productCargoType": "C201"}
+]
