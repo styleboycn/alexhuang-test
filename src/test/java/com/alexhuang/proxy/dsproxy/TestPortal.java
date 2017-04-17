@@ -30,7 +30,7 @@ public class TestPortal {
 				System.out.println("[TestPortal.test]Thread id is "
 						+ Thread.currentThread().getId() + ", CityCode is "
 						+ cityCode);
-				testBiz.test();
+//				testBiz.test();
 				cdl.countDown();
 			});
 		}

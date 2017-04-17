@@ -13,6 +13,9 @@ public abstract class TypeRef<T> {
 	 */
 	Type getType() {
 		return jt;
+//		ParameterizedType pType = (ParameterizedType) this.getClass().getGenericSuperclass();
+//		Type[] types = pType.getActualTypeArguments();
+//		return types[0];
 	}
 
 }
