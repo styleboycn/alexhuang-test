@@ -17,7 +17,7 @@
 
 	<bean id="txKafkaProducer" class="com.alexhuang.spring.tx.TxKafkaProducer" />
 
-	<bean id="sgsMethodInterceptor" class="com.sf.mdmtrm.framework.aop.SgsMethodInterceptor">
+	<bean id="sgsMethodInterceptor" class="com.alexhuang.spring.aop.SgsMethodInterceptor">
 	    <property name="transactionBeanNames" value="txKafkaProducer"/>
 	</bean>
 

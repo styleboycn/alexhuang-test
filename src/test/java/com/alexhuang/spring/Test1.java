@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.alexhuang.spring.biz.ITestBiz;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:config-datasource-tx.xml", "classpath*:config-datasource.xml"})
+@ContextConfiguration(locations = {"classpath*:interceptor/*.xml"})
 public class Test1 {
 
 	private @Autowired ITestBiz testBiz;
@@ -17,6 +17,7 @@ public class Test1 {
 	@Test
 	public void test() throws Exception {
 		System.out.println();
+		testBiz.test1();
 	}
 
 }
