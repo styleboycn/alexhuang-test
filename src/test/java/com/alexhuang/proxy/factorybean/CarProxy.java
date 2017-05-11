@@ -1,4 +1,4 @@
-package com.alexhuang.spring.factorybean;
+package com.alexhuang.proxy.factorybean;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.alexhuang.spring.factorybean;
+package com.alexhuang.proxy.factorybean;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class TestBiz {
 
-	//private @Autowired TestDao testDao;
+	private @Autowired TestDao testDao;
 
 	public void test() {
-		//testDao.test();
+		testDao.test();
 	}
 
 }

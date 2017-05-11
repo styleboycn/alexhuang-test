@@ -1,4 +1,4 @@
-package com.alexhuang.spring.factorybean;
+package com.alexhuang.proxy.factorybean;
 
 public class MazdaCar implements ICar {
 	

@@ -62,6 +62,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
 
-	<bean id="testDao" class="com.alexhuang.proxy.dsproxy.TestDao" />
+	<!-- <bean id="testDao" class="com.alexhuang.proxy.dsproxy.TestDao" /> -->
+	
 
 </beans>

@@ -1,4 +1,4 @@
-package com.alexhuang.spring.factorybean;
+package com.alexhuang.proxy.factorybean;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
