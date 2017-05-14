@@ -1,15 +1,20 @@
 package com.alexhuang.spring.tx;
 
+
 public class TxKafkaProducer implements ITransaction {
 
     private static ThreadLocal<String> holder = new ThreadLocal<String>();
+    
+    public void send(String msg) {
+    	holder.set(msg);
+    }
 	
 	@Override
 	public void commit() {
 		// TODO Auto-generated method stub
 		String threadLocalString = holder.get();
 		try {
-			System.out.println("TxKafkaProducer commit, data is " + threadLocalString);
+			System.out.println("TxKafkaProducer commit, data is " + threadLocalString + "\n");
 		} finally {
 			holder.remove();
 		}
@@ -18,7 +23,7 @@ public class TxKafkaProducer implements ITransaction {
 	@Override
 	public void rollback() {
 		// TODO Auto-generated method stub
-		System.out.println("TxKafkaProducer rollback");
+		System.out.println("TxKafkaProducer will rollback");
 		holder.remove();
 	}
 

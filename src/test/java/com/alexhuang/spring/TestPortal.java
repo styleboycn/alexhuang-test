@@ -10,14 +10,23 @@ import com.alexhuang.spring.biz.ITestBiz;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:interceptor/*.xml"})
-public class Test1 {
+public class TestPortal {
 
 	private @Autowired ITestBiz testBiz;
 
 	@Test
-	public void test() throws Exception {
-		System.out.println();
-		testBiz.test1();
+	public void testBeanBiz() {
+		testBiz.test1();//事务回滚，执行失败
+	}	
+	
+	@Test
+	public void testBeanService() throws Exception {
+		testBiz.test2();//事务不回滚，执行成功
+	}
+	
+	@Test
+	public void testBeanService2() throws Exception {
+		testBiz.test3();//try/catch后继续抛出异常，事务回滚，执行失败
 	}
 
 }

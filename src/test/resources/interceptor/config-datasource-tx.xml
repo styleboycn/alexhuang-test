@@ -12,9 +12,6 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<!-- 这句话运行在beans.xml配置的类中使用@Transactional来申明事务
-	<tx:annotation-driven transaction-manager="transactionManager" /> -->
-
 	<bean id="txKafkaProducer" class="com.alexhuang.spring.tx.TxKafkaProducer" />
 
 	<bean id="sgsMethodInterceptor" class="com.alexhuang.spring.aop.SgsMethodInterceptor">
