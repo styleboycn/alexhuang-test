@@ -1,16 +1,17 @@
 package com.alexhuang.patterndesign.factory;
 
-import com.alexhuang.patterndesign.factory.export.ExportFile;
-import com.alexhuang.patterndesign.factory.factory.ExportFactory;
-import com.alexhuang.patterndesign.factory.factory.ExportHtmlFactory;
+import com.alexhuang.patterndesign.factory.export.IExportFile;
+import com.alexhuang.patterndesign.factory.factory.DefaultExportFactory;
+import com.alexhuang.patterndesign.factory.factory.IExportFactory;
 
 public class Test1 {
 
 	public static void main(String[] args) {
 		
-        String data = "";
-        ExportFactory exportFactory = new ExportHtmlFactory();
-        ExportFile ef = exportFactory.factory("financial");
+        IExportFactory exportFactory = new DefaultExportFactory();
+        IExportFile ef = exportFactory.factory("pdf");
+        
+        String data = "this is export data";
         ef.export(data);
         
     }

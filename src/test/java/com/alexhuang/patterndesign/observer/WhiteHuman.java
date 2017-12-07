@@ -9,13 +9,10 @@ public class WhiteHuman implements IHuman, IListener {
 
 	public void work() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	public void study() {
 		// TODO Auto-generated method stub
-		
 	}
-	
 	
 }

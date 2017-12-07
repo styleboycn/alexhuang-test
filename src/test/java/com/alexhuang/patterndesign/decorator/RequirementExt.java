@@ -10,6 +10,7 @@ public class RequirementExt extends RequirementDecorator {
 	public void developRequirement() {
 		System.out.println("--! before RequirementExt -> developRequirement！");
 		super.developRequirement();
+		// addedOperation() 用来增强此函数功能
 		this.addedOperation();
 		System.out.println("--! after RequirementExt -> developRequirement！");	
 	}

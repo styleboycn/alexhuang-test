@@ -1,6 +1,6 @@
 package com.alexhuang.patterndesign.factory.export;
 
-public interface ExportFile {
+public interface IExportFile {
 	
     public boolean export(String data);
     

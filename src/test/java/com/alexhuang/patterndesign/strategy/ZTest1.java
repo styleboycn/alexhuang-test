@@ -1,6 +1,6 @@
 package com.alexhuang.patterndesign.strategy;
 
-public class Test1 {
+public class ZTest1 {
 
 	public static void main(String[] args) {
 
