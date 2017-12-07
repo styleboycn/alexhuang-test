@@ -9,7 +9,7 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		
-		IRequirement reqInf = new ProxyObject();
+		IRequirement reqInf = ProxyObject.getProxyObject();
 		reqInf.developRequirement();
 		
 	}
