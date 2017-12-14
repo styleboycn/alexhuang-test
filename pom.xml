@@ -25,6 +25,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<!-- <maven.test.skip>true</maven.test.skip> -->
 		<skip_maven_deploy>false</skip_maven_deploy>
+		<log4j2.version>2.8.2</log4j2.version>
 	</properties>
 
 	<dependencies>
@@ -170,6 +171,19 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<!-- log end -->
+		<!-- log4j2 start -->
+		<dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <!-- log4j2 end -->
+
 
 		<!-- hibernate -->
 		<dependency>
