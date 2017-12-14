@@ -44,6 +44,9 @@
         则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
         <RollingFile name="RollingFileInfo" fileName="${LOG_HOME}/info.log"
             filePattern="${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+            
+            <BurstFilter level="INFO" rate="2" maxBurst="10"/>
+            
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="info" onMatch="ACCEPT"
                 onMismatch="DENY" />

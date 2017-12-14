@@ -13,8 +13,27 @@ public class App {
 	private static Logger logger = LogManager.getLogger(App.class);
 
 	public static void main(String[] args) {
+		
 		logger.info("Hello World!");
 		logger.error("Hello World!");
 		logger.warn("Hello World!");
+		
+		testBurstFilter();
+
 	}
+	
+	public static void testBurstFilter() {
+		int runSecs = 20;
+		int count = 0;
+		long targetTime = System.currentTimeMillis() + runSecs * 1000;
+		while (true) {
+			if (System.currentTimeMillis() > targetTime) {
+				break;
+			}
+			logger.info("abc");
+			count++;
+		}
+		System.out.println("count : " + count);
+	}
+	
 }
