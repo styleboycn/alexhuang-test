@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 //dataSource是通过spring的控制反转机制由spring的FactoryBean接口实现构造，getObject()时返回代理对象（DataSource的代理）
 //代理对象通过InvocationHandler和反射机制，最终调用物理真实的datasource数据源完成操作
 
-@Component("dataSource")
+@Component("dataSourceProxy")
 public class DataSourceProxy implements FactoryBean<DataSource>,
 		InitializingBean, InvocationHandler {
 
