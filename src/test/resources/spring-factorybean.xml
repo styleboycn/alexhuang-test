@@ -7,12 +7,12 @@
 
 	<bean id="mazdaCar" class="com.alexhuang.proxy.factorybean.CarProxy">
 		<property name="serviceInterface"
-			value=" com.alexhuang.spring.factorybean.MazdaCar" />
+			value="com.alexhuang.proxy.factorybean.MazdaCar" />
 	</bean>
 	
 	<bean id="audiCar" class="com.alexhuang.proxy.factorybean.CarProxy">
 		<property name="serviceInterface"
-			value=" com.alexhuang.spring.factorybean.AudiCar" />
+			value="com.alexhuang.proxy.factorybean.AudiCar" />
 	</bean>
 	
 	<bean id="initBean" class="com.alexhuang.proxy.factorybean.InitBean">
