@@ -1,4 +1,4 @@
-package com.alexhuang.spring.dao;
+package com.alexhuang.dao;
 
 public interface ITestDao {
 

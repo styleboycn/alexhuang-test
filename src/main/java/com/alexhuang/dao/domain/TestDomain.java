@@ -1,4 +1,4 @@
-package com.alexhuang.spring.dao.domain;
+package com.alexhuang.dao.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

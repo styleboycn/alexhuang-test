@@ -6,6 +6,9 @@ package com.alexhuang.idgenerator;
 import java.util.Base64;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class IdGenerator implements IIdGenerator {
 
     private static final byte genflg = 0; // 0.server; 1.app

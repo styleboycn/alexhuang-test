@@ -3,7 +3,7 @@ package com.alexhuang.spring.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.alexhuang.spring.dao.ITestDao;
+import com.alexhuang.dao.ITestDao;
 
 /**
  * TestBiz是以Biz结尾的spring bean，会进入BeanNameAutoProxyCreator切面

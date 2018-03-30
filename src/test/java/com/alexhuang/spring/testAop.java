@@ -10,7 +10,7 @@ import com.alexhuang.spring.biz.ITestBiz;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:interceptor/*.xml"})
-public class TestPortal {
+public class testAop {
 
 	private @Autowired ITestBiz testBiz;
 

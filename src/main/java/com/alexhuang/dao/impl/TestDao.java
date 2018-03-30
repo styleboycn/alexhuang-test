@@ -1,4 +1,4 @@
-package com.alexhuang.spring.dao;
+package com.alexhuang.dao.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +8,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.alexhuang.spring.dao.domain.TestDomain;
+import com.alexhuang.dao.ITestDao;
+import com.alexhuang.dao.domain.TestDomain;
 
 @Component
 public class TestDao implements ITestDao {
