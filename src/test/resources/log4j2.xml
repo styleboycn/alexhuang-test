@@ -45,7 +45,7 @@
         <RollingFile name="RollingFileInfo" fileName="${LOG_HOME}/info.log"
             filePattern="${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
             
-            <BurstFilter level="INFO" rate="2" maxBurst="10"/>
+            <BurstFilter level="INFO" rate="3" maxBurst="10"/>
             
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="info" onMatch="ACCEPT"
