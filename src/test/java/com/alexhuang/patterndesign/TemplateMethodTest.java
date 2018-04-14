@@ -1,4 +1,8 @@
-package com.alexhuang.patterndesign.template;
+package com.alexhuang.patterndesign;
+
+import com.alexhuang.patterndesign.template.AbstractStudySwimming;
+import com.alexhuang.patterndesign.template.BadStudySwimming;
+import com.alexhuang.patterndesign.template.GoodStudySwimming;
 
 //Template Method模式
 //http://blog.csdn.net/dadalan/article/details/3868489
@@ -11,7 +15,7 @@ package com.alexhuang.patterndesign.template;
 //上面的意思是说，将AbstractStudySwimming中studyTheoryBook()、warmupBody()、morePractice()
 //定义为protected方法，不对外暴露，只将模板方法bestPractice()对外暴露。
 
-public class Test1 {
+public class TemplateMethodTest {
 
 	public static void main(String[] args) {
 		
