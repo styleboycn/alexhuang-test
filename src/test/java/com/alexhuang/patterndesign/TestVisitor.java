@@ -1,4 +1,7 @@
-package com.alexhuang.patterndesign.visitor;
+package com.alexhuang.patterndesign;
+
+import com.alexhuang.patterndesign.visitor.Car;
+import com.alexhuang.patterndesign.visitor.PrintVisitor;
 
 //http://blog.csdn.net/hfmbook/article/details/7684175
 //http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html
@@ -7,7 +10,7 @@ package com.alexhuang.patterndesign.visitor;
 //3、創建一個訪問者(visitor)
 //4、機構對象傳入訪問者，進行相關操作
 
-public class ZTest1 {
+public class TestVisitor {
 
 	public static void main(String[] args) {
 		
