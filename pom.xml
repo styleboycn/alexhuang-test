@@ -253,7 +253,11 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.2</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.googlecode.aviator</groupId>
+			<artifactId>aviator</artifactId>
+			<version>3.3.0</version>
+		</dependency>  
 	</dependencies>
 	
 	<build>
