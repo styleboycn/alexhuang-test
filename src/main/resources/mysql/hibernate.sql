@@ -1,0 +1,12 @@
+CREATE TABLE `tt_people` (
+  `ID` bigint(18) unsigned NOT NULL AUTO_INCREMENT COMMENT '人员ID',
+  `NAME` varchar(100) DEFAULT NULL COMMENT '姓名',
+  `AGE` tinyint(3) unsigned DEFAULT NULL COMMENT '年龄',
+  `BIRTHDAY` date DEFAULT NULL COMMENT '生日',
+  `GENDER` tinyint(1) unsigned DEFAULT NULL COMMENT '性别：1男 2女',
+  `WORK_TIME` datetime DEFAULT NULL COMMENT '上班时间',
+  `MODIFY_TIME` timestamp(3) NULL DEFAULT NULL,
+  `WORK_CONTENT` varchar(600) DEFAULT NULL COMMENT '工作内容',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='人员表';
+
