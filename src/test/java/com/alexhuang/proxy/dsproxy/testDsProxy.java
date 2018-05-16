@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.alexhuang.spring.biz.DsProxyBiz;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:dsproxy.xml")
 public class testDsProxy {
 
-	private @Autowired TestBiz testBiz;
+	private @Autowired DsProxyBiz dsProxyBiz;
 
 	@Test
 	public void test() throws Exception {

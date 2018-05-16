@@ -13,9 +13,9 @@
 	<bean id="qm-datasource" class="com.alibaba.druid.pool.DruidDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://10.202.44.17:3306/incsgs_intdb" /> 
-		<property name="username" value="incsgs_gw" /> 
-		<property name="password" value="incsgs_gw" />
+		<property name="url" value="jdbc:mysql://10.202.4.39:3307/test" /> 
+		<property name="username" value="res" /> 
+		<property name="password" value="res123456" />
 	</bean>
 
 	<bean name="sessionFactory"
