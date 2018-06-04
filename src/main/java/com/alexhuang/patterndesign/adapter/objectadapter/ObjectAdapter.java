@@ -1,7 +1,7 @@
 package com.alexhuang.patterndesign.adapter.objectadapter;
 
 //对象适配器
-public class ObjectAdapter extends ObjectAdaptee implements ObjectTargetInf {
+public class ObjectAdapter implements IObjectTargetInf {
 	
 	private ObjectAdaptee adaptee;
 	

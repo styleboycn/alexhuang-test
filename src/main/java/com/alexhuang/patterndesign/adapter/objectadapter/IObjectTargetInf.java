@@ -1,7 +1,7 @@
-package com.alexhuang.patterndesign.adapter.classadapter;
+package com.alexhuang.patterndesign.adapter.objectadapter;
 
 //目标角色/接口：这是所期待得到的接口。
-public interface ClassTargetInf {
+public interface IObjectTargetInf {
 	
 	/**
      * 这是源类Adaptee也有的方法

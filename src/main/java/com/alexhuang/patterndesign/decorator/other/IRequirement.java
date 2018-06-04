@@ -1,4 +1,4 @@
-package com.alexhuang.patterndesign.decorator;
+package com.alexhuang.patterndesign.decorator.other;
 
 public interface IRequirement {
 	

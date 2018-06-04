@@ -1,7 +1,7 @@
 package com.alexhuang.patterndesign.adapter.classadapter;
 
 //类适配器
-public class ClassAdapter extends ClassAdaptee implements ClassTargetInf {
+public class ClassAdapter extends ClassAdaptee implements IClassTargetInf {
 
 	@Override
 	public void sampleOperation2() {

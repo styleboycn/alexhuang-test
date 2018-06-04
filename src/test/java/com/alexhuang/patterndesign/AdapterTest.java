@@ -21,15 +21,17 @@ public class AdapterTest {
 		objectAdapterTest();
 	}
 	
+	//类适配器模式
 	public static void classAdapterTest() {
-		ClassAdapter classAdapter = new ClassAdapter();
+		IClassTargetInf classAdapter = new ClassAdapter();
 		classAdapter.sampleOperation1();
 		classAdapter.sampleOperation2();
 	}
 	
+	//对象适配器模式
 	public static void objectAdapterTest() {
 		ObjectAdaptee adaptee = new ObjectAdaptee();
-		ObjectAdapter objectAdapter = new ObjectAdapter(adaptee);
+		IObjectTargetInf objectAdapter = new ObjectAdapter(adaptee);
 		objectAdapter.sampleOperation1();
 		objectAdapter.sampleOperation2();
 	}
