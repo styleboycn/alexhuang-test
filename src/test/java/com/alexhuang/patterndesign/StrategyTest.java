@@ -10,14 +10,16 @@ public class StrategyTest {
 
 	public static void main(String[] args) {
 
+		//构造会员策略
 		IMemberStrategy strategy1 = new AdvanceMemberStrategy();
+		//构造优惠劵策略
 		ICouponStrategy strategy2 = new BlueCouponStrategy();
-		
+		//构造/初始化用户价格模块
 		UserPriceModule price = new UserPriceModule(strategy1, strategy2);
-        
-        double quote = price.quote(300);
-        System.out.println("图书的最终价格为：" + quote);
-	
+		//报价
+		double quote = price.quote(300);
+		System.out.println("图书的最终价格为：" + quote);
+
 	}
 
 }
