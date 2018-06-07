@@ -1,4 +1,4 @@
-package com.alexhuang.patterndesign.component;
+package com.alexhuang.patterndesign.composite;
 
 public abstract class Component {
 
