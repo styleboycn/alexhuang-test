@@ -13,7 +13,6 @@ import com.alexhuang.patterndesign.proxy.ProxyObject;
 	《JAVA与模式》之代理模式
 	http://www.cnblogs.com/java-my-life/archive/2012/04/23/2466712.html
  */
-
 public class ProxyTest {
 
 	public static void main(String[] args) {

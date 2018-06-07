@@ -14,7 +14,6 @@ https://www.cnblogs.com/java-my-life/archive/2012/03/22/2412308.html
 https://www.cnblogs.com/java-my-life/archive/2012/03/28/2418836.html
  *
  */
-
 public class FactoryTest {
 
 	public static void main(String[] args) {

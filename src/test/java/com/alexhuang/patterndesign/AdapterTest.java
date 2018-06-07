@@ -13,7 +13,6 @@ import com.alexhuang.patterndesign.adapter.objectadapter.*;
 	http://www.cnblogs.com/java-my-life/archive/2012/04/13/2442795.html
  *
  */
-
 public class AdapterTest {
 	
 	public static void main(String[] args) {

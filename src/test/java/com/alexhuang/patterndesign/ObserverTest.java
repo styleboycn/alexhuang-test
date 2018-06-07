@@ -13,7 +13,6 @@ import com.alexhuang.patterndesign.observer.YellowHuman;
  * 《JAVA与模式》之观察者模式
  * https://www.cnblogs.com/java-my-life/archive/2012/05/16/2502279.html
  */
-
 public class ObserverTest {
 
 	public static void main(String[] args) {

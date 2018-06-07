@@ -15,7 +15,6 @@ import com.alexhuang.patterndesign.decorator.other.RequirementExt;
 	http://www.blogjava.net/killme2008/archive/2007/04/06/108894.html
  *
  */
-
 public class DecoratorTest {
 
 	public static void main(String[] args) {
