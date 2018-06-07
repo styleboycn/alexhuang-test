@@ -1,4 +1,4 @@
-package com.alexhuang.patterndesign.component;
+package com.alexhuang.patterndesign.composite;
 
 import java.util.ArrayList;
 import java.util.List;

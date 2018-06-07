@@ -1,4 +1,4 @@
-package com.alexhuang.patterndesign.component;
+package com.alexhuang.patterndesign.composite;
 
 //不在有根节点
 public class Leaf extends Component {
