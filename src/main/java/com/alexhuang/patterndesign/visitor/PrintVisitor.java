@@ -3,7 +3,7 @@ package com.alexhuang.patterndesign.visitor;
 public class PrintVisitor implements IVisitor {
 
 	public void visit(Wheel wheel) {
-		System.out.println("Visiting " + wheel.getWheelName() + " wheel");  
+		System.out.println("Visiting " + wheel.getWheelName());  
 	}
 
 	public void visit(Engine engine) {
