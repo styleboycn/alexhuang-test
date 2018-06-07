@@ -3,25 +3,19 @@ package com.alexhuang.patterndesign.visitor;
 public class PrintVisitor implements IVisitor {
 
 	public void visit(Wheel wheel) {
-		// TODO Auto-generated method stub
-		System.out.println("Visiting " + wheel.getName() + " wheel");  
+		System.out.println("Visiting " + wheel.getWheelName() + " wheel");  
 	}
 
 	public void visit(Engine engine) {
-		// TODO Auto-generated method stub
-		System.out.println("Visiting engine");
+		System.out.println("Visiting " + engine.getEngineName());
 	}
 
 	public void visit(Body body) {
-		// TODO Auto-generated method stub
-		System.out.println("Visiting body");  
+		System.out.println("Visiting " + body.getBodyName());
 	}
 
 	public void visit(Car car) {
-		// TODO Auto-generated method stub
-		System.out.println("Visiting car"); 
+		System.out.println("Visiting " + car.getCarName());
 	}
 
-
-	
 }

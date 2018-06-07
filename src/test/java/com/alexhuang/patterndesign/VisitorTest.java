@@ -3,20 +3,15 @@ package com.alexhuang.patterndesign;
 import com.alexhuang.patterndesign.visitor.Car;
 import com.alexhuang.patterndesign.visitor.PrintVisitor;
 
-//http://blog.csdn.net/hfmbook/article/details/7684175
+//《JAVA与模式》之访问者模式
 //http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html
-//1、創建一個結構對象(object structure)
-//2、結構對象增加節點(node)
-//3、創建一個訪問者(visitor)
-//4、機構對象傳入訪問者，進行相關操作
+//访问者模式适用于数据结构相对未定的系统，它把数据结构和作用于结构上的操作之间的耦合解脱开，使得操作集合可以相对自由地演化。
 
 public class VisitorTest {
 
 	public static void main(String[] args) {
-		
-		Car car = new Car();
+		Car car = new Car("weilai");
 		car.accept(new PrintVisitor());//add a visitor
-		
 	}
 
 }
