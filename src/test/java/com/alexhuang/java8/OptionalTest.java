@@ -8,7 +8,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class OptionalTest1 {
+public class OptionalTest {
 
 	public static class Student {
 		private String name;
@@ -55,12 +55,33 @@ public class OptionalTest1 {
 		System.out.println("std3_result : " + std3_result);
 
 		// test orElseThrow
-		Optional.ofNullable(std4).orElseThrow(() -> new IllegalArgumentException());
+		Optional.ofNullable(std4).map(Student::getName).orElseThrow(() -> new IllegalArgumentException());
 	}
+
+	public static void test_Optional_ifPresent_1() {
+		String std1 = "hello1111";
+		Optional<String> optStr = Optional.ofNullable(std1);
+		optStr.ifPresent(s -> System.out.println(s));
+	}
+
+    public static void test_Optional_ifPresent_2() {
+        String std1 = null;
+        Optional<String> optStr = Optional.ofNullable(std1);
+        optStr.ifPresent(s -> System.out.println(s));
+    }
+
+    public static void test_Optional_ifPresent_3() {
+        String std1 = null;
+        Optional<String> optStr = Optional.ofNullable(std1);
+        System.out.println(optStr.orElseGet(() -> "kk11"));
+    }
 	
 	
 	public static void main(String[] args) {
 		test_Optional_ofNullable();
+//      test_Optional_ifPresent_1();
+//      test_Optional_ifPresent_2();
+//        test_Optional_ifPresent_3();
 	}
 
 }
