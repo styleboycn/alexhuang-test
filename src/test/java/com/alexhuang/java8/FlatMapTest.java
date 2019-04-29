@@ -1,12 +1,13 @@
 package com.alexhuang.java8;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FlatMapTest1 {
+public class FlatMapTest {
 
 	public static class Student {
 		private String name;
@@ -62,7 +63,7 @@ public class FlatMapTest1 {
 				.collect(Collectors.toList());
 		ids.forEach(System.out::println);
 	}
-	
+
 	public static void testbasic2(Predicate<Student> predicate1, Predicate<Student> predicate2) {
 		List<String> ids = studentList.stream()
 				.filter(predicate1)
@@ -71,7 +72,12 @@ public class FlatMapTest1 {
 				.collect(Collectors.toList());
 		ids.forEach(System.out::println);
 	}
-
+	public static Predicate<Student> predicateOfgreatThan15() {
+		return p -> p != null && p.getAge() > 15;
+	}
+	public static Predicate<Student> predicateOfLevelIsYellow() {
+		return p -> p != null && p.getLevel() == Level.YELLOW;
+	}
 
 	public static void testbasic3() {
 		List<Integer> nums = Arrays.asList(1, 1, null, 2, 3, 4, null, 5, 6, 7,
@@ -83,7 +89,7 @@ public class FlatMapTest1 {
 				.mapToInt(num -> num * 2)
 				.peek(System.out::println)
 				.skip(2)
-				.limit(5)
+				.limit(4)
 				.sum();
 		System.out.println("sum is : " + valueOfSum);
 	}
@@ -97,47 +103,26 @@ public class FlatMapTest1 {
 		together.forEach(System.out::println);
 	}
 
-	public static Predicate<Student> predicateOfgreatThan15() {
-		return p -> p != null && p.getAge() > 15;
-	}
-	
-	public static Predicate<Student> predicateOfLevelIsYellow() {
-		return p -> p != null && p.getLevel() == Level.YELLOW;
+	public static void test_summary_stat() {
+		//同时获取最大 最小 平均值等信息
+		List<Integer> list1 = Arrays.asList(1, 3, 5, 7, 9, 11);
+		IntSummaryStatistics statistics = list1.stream().filter(integer -> integer > 2).mapToInt(i -> i * 2).skip(2).limit(2).summaryStatistics();
+		System.out.println(statistics.getMax());//18
+		System.out.println(statistics.getMin());//14
+		System.out.println(statistics.getAverage());//16
 	}
 	
 	public static void main(String[] args) {
 
-		testbasic1();
+//		testbasic1();
 
-		testbasic2(predicateOfgreatThan15(), predicateOfLevelIsYellow());
+//		testbasic2(predicateOfgreatThan15(), predicateOfLevelIsYellow());
 
-		testbasic3();
+//		testbasic3();
 		
-		testflatMap();
+//		testflatMap();
 
+		test_summary_stat();
 	}
-
-	// case1:
-	// public Set<String> findLongTracks(List<Album> albums) {
-	// Set<String> trackNames = new HashSet<>();
-	// for(Album album : albums) {
-	// for (Track track : album.getTrackList()) {
-	// if (track.getLength() > 60) {
-	// String name = track.getName();
-	// trackNames.add(name);
-	// }
-	// }
-	// }
-	// return trackNames;
-	// }
-
-	// case2:
-	// public Set<String> findLongTracks(List<Album> albums) {
-	// return albumns.stream()
-	// .flatMap(album -> album.getTracks()) //合并每個專輯(albums)中的所有歌曲(track)
-	// .filter(track -> track.getLength() > 60)//過濾每個歌曲的特定屬性
-	// .map(track -> track.getName())//對每個歌曲獲取名字(函數轉換/操作)
-	// .collect(toSet());//轉換成一個集合(set)
-	// }
 
 }
