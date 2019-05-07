@@ -1,6 +1,7 @@
 package com.alexhuang.java8;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -206,6 +207,29 @@ public class StreamTest {
 		hobbySet.forEach(System.out::println);
 	}
 
+	public static void test_stream_function_test1() {
+//		Consumer<String> c = i -> System.out.println("hello" + i);
+		Function<String, String> f = i -> {
+			if (i == "aa")
+				return i + "hello2";
+			else
+				return i + "hello1";
+		};
+		Stream.of("aa", "bb", "cc").map(f).forEach(System.out::println);
+	}
+
+	public static void test_stream_groupingby_1() {
+		//xxxxxx
+	}
+
+	public static void test_stream_groupingby_2() {
+		//
+	}
+
+	public static void test_stream_partitioningby_1() {
+		//
+	}
+
 	public static void main(String[] args) {
 //		test_basic_1();
 //		test_basic_2();
@@ -213,10 +237,11 @@ public class StreamTest {
 //		test_basic_4();
 //		test_basic_5();
 //		test_basic_6();
-		test_basic_7();
+//		test_basic_7();
 //		test_stream_foreach_list();
 //		test_stream_foreach_map();
 //		test_stream_foreach_set();
+		test_stream_function_test1();
 	}
 
 }

@@ -95,7 +95,7 @@ public class FlatMapTest {
 	}
 
 	// 有时候我们想替换为一个新的Stream对象，更常见的是把多个Stream和合并为一个Stream
-	public static void testflatMap() {
+	public static void test_stream_flatmap() {
 		List<Integer> together = Stream
 				.of(Arrays.asList(1, 2), Arrays.asList(3, 4))
 				.flatMap(numbers -> numbers.stream())
