@@ -1,4 +1,4 @@
-package com.alexhuang.common_pool.connectionpool;
+package com.alexhuang.objectpool;
 
 import java.net.Socket;
 
@@ -9,7 +9,9 @@ public class ConnectionPoolFactory {
 
 	public ConnectionPoolFactory(GenericObjectPool.Config config, String ip,
 			int port) {
+	    //创建对象工厂
 		ConnectionFactory factory = new ConnectionFactory(ip, port);
+		//使用工厂对象(factory)作为参数，创建对象池(pool)
 		pool = new GenericObjectPool(factory, config);
 	}
 
@@ -29,5 +31,17 @@ public class ConnectionPoolFactory {
 				}
 			}
 		}
+	}
+
+	public int getNumActive() {
+		if (pool != null)
+			return pool.getNumActive();
+		return -1;
+	}
+
+	public int getNumIdle() {
+		if (pool != null)
+			return pool.getNumIdle();
+		return -1;
 	}
 }

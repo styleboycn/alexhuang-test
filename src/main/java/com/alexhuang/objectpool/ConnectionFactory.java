@@ -1,4 +1,4 @@
-package com.alexhuang.common_pool.connectionpool;
+package com.alexhuang.objectpool;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -10,6 +10,7 @@ public class ConnectionFactory extends BasePoolableObjectFactory {
 	private InetSocketAddress address;
 
 	public ConnectionFactory(String ip, int port) {
+		// 初始化内部变量
 		address = new InetSocketAddress(ip, port);
 	}
 
@@ -20,12 +21,14 @@ public class ConnectionFactory extends BasePoolableObjectFactory {
 		return socket;
 	}
 
+	@Override
 	public void destroyObject(Object obj) throws Exception {
 		if (obj instanceof Socket) {
 			((Socket) obj).close();
 		}
 	}
 
+	@Override
 	public boolean validateObject(Object obj) {
 		if (obj instanceof Socket) {
 			Socket socket = ((Socket) obj);
