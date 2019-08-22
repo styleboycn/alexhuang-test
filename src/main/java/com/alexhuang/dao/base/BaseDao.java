@@ -41,6 +41,24 @@ import org.springframework.util.Assert;
  */
 public class BaseDao implements BeanFactoryAware {
 
+    /**
+     * slf4j的日志统一接口，slf4j日志，可以使用带参数的日志内容，具体参考slf4j的相关文档
+     * 本框架使用logback来记录日志，性能更加优化
+     */
+    protected Logger logger = LoggerFactory.getLogger(getClass());
+
+    protected BeanFactory beanFactory;
+
+    @Autowired(required = false)
+    protected SessionFactory sessionFactory;
+
+    private static final IQueryCall<Integer> UPDATE_QUERY_CALL = new IQueryCall<Integer>() {
+        @Override
+        public Integer call(Query upQry) {
+            return upQry.executeUpdate();
+        }
+    };
+
     /** 在Query执行之前调用的接口 */
     @FunctionalInterface
     public static interface ICallInQuery {
@@ -65,13 +83,6 @@ public class BaseDao implements BeanFactoryAware {
     public static interface IQueryCall<E> {
     	E call(Query upQry);
     }
-
-    private static final IQueryCall<Integer> UPDATE_QUERY_CALL = new IQueryCall<Integer>() {
-    	@Override
-    	public Integer call(Query upQry) {
-    		return upQry.executeUpdate();
-    	}
-    };
 
     /**
      * 数据库每次执行关于有in语句的SQL，params的个数，必须小于或者等于 size的大小
@@ -241,17 +252,6 @@ public class BaseDao implements BeanFactoryAware {
     public void flush() {
         this.currentSession().flush();
     }
-    
-    protected BeanFactory beanFactory;
-
-    /**
-     * slf4j的日志统一接口，slf4j日志，可以使用带参数的日志内容，具体参考slf4j的相关文档
-     * 本框架使用logback来记录日志，性能更加优化
-     */
-    protected Logger logger = LoggerFactory.getLogger(getClass());
-
-    @Autowired(required = false)
-    protected SessionFactory sessionFactory;
     
     public void closeSession(Session session) {
         SessionFactoryUtils.closeSession(session);
