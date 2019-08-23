@@ -1,7 +1,8 @@
-package com.alexhuang.objectpool;
+package com.alexhuang.pool;
 
 import java.net.Socket;
 
+import com.alexhuang.pool.objectpool.ConnectionPoolFactory;
 import org.apache.commons.pool.impl.GenericObjectPool.Config;
 
 public class ConnectionPoolTest {
@@ -17,6 +18,9 @@ public class ConnectionPoolTest {
 		Socket socket2 = null;
 		Socket socket3 = null;
 		try {
+			System.out.println("######################");
+			System.out.println("##in execution phase##");
+			System.out.println("######################");
 			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
 			socket1 = poolFactory.getConnection();
 			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
@@ -27,6 +31,9 @@ public class ConnectionPoolTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			System.out.println("####################");
+			System.out.println("##in finally phase##");
+			System.out.println("####################");
 			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
 			if (socket1 != null) {
 				poolFactory.releaseConnection(socket1);
@@ -39,7 +46,5 @@ public class ConnectionPoolTest {
 			socket3 = poolFactory.getConnection();
 			System.out.println(poolFactory.getNumActive() + "####" + poolFactory.getNumIdle());
 		}
-
 	}
-	 
 }

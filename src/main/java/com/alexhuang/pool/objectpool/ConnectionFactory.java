@@ -1,4 +1,4 @@
-package com.alexhuang.objectpool;
+package com.alexhuang.pool.objectpool;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
