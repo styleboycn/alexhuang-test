@@ -20,14 +20,16 @@ public class ConnectionPoolFactory {
 	}
 
 	public void releaseConnection(Socket socket) {
-		try {
-			pool.returnObject(socket);
-		} catch (Exception e) {
-			if (socket != null) {
-				try {
-					socket.close();
-				} catch (Exception ex) {
-					//
+		if (socket != null) {
+			try {
+				pool.returnObject(socket);
+			} catch (Exception e) {
+				if (socket != null) {
+					try {
+						socket.close();
+					} catch (Exception ex) {
+						//
+					}
 				}
 			}
 		}

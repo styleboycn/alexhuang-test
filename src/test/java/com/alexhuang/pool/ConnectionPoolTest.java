@@ -34,16 +34,16 @@ public class ConnectionPoolTest {
 			System.out.println("####################");
 			System.out.println("##in finally phase##");
 			System.out.println("####################");
+
+			poolFactory.releaseConnection(socket1);
 			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
-			if (socket1 != null) {
-				poolFactory.releaseConnection(socket1);
-			}
+
+			poolFactory.releaseConnection(socket2);
 			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
-			if (socket2 != null) {
-				poolFactory.releaseConnection(socket2);
-			}
-			System.out.println(poolFactory.getNumActive() + "##" + poolFactory.getNumIdle());
-			socket3 = poolFactory.getConnection();
+
+			//socket3 = poolFactory.getConnection();
+			//释放对象为空，如果在releaseConnection未处理好，会导致pool状态异常
+			poolFactory.releaseConnection(socket3);
 			System.out.println(poolFactory.getNumActive() + "####" + poolFactory.getNumIdle());
 		}
 	}

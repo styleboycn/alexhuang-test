@@ -43,4 +43,16 @@ public class ConnectionFactory extends BasePoolableObjectFactory {
 		return false;
 	}
 
+	@Override
+	public void passivateObject(Object obj)
+			throws Exception {
+		//do nothing
+	}
+
+	@Override
+	public void activateObject(Object obj)
+			throws Exception {
+		//do nothing
+	}
+
 }

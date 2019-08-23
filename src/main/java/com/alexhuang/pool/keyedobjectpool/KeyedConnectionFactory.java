@@ -51,4 +51,16 @@ public class KeyedConnectionFactory extends BaseKeyedPoolableObjectFactory {
 		return false;
 	}
 
+	@Override
+	public void passivateObject(Object key, Object obj)
+			throws Exception {
+		//do nothing
+	}
+
+	@Override
+	public void activateObject(Object key, Object obj)
+			throws Exception {
+		//do nothing
+	}
+
 }

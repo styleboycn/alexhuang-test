@@ -22,14 +22,16 @@ public class KeyedConnectionPoolFactory {
 	}
 
 	public void releaseConnection(String key, Socket socket) {
-		try {
-			pool.returnObject(key, socket);
-		} catch (Exception e) {
-			if (socket != null) {
-				try {
-					socket.close();
-				} catch (Exception ex) {
-					//
+		if (socket != null) {
+			try {
+				pool.returnObject(key, socket);
+			} catch (Exception e) {
+				if (socket != null) {
+					try {
+						socket.close();
+					} catch (Exception ex) {
+						//
+					}
 				}
 			}
 		}
