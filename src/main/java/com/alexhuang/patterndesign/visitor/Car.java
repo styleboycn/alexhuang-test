@@ -25,7 +25,7 @@ public class Car {
 		visitorList.add(visitor);
 	}
 	
-	public void action() {
+	public void visitorAction() {
 		for (IVisitor visitor : visitorList) {
 			visitor.visit(this);
 			engine.accept(visitor);

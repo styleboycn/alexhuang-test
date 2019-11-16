@@ -12,7 +12,7 @@ public class VisitorTest {
 	public static void main(String[] args) {
 		Car car = new Car("weilai");
 		car.accept(new PrintVisitor());//add a visitor
-		car.action();
+		car.visitorAction();
 	}
 
 }
